@@ -32,7 +32,5 @@ public class Pemilihan2Percobaan329{
         } else 
             System.out.println("Masukan Kategori Salah");
 
-            
-
     }
 }
