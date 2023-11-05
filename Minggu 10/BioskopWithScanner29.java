@@ -17,6 +17,9 @@ public class BioskopWithScanner29{
 
             switch (choice) {
                 case 1:
+                boolean kursiTidakAda = true;
+
+                do {
                     System.out.print("Masukkan nama: ");
                     String nama = sc.nextLine();
                     System.out.print("Masukkan baris: ");
@@ -28,14 +31,18 @@ public class BioskopWithScanner29{
                     if (baris >= 1 && baris <= 4 && kolom >= 1 && kolom <= 2) {
                         if (penonton[baris - 1][kolom - 1] == null) {
                             penonton[baris - 1][kolom - 1] = nama;
-                             System.out.println("Reservasi tempat duduk berhasil.");
+                            System.out.println("Reservasi tempat duduk berhasil.");
                         } else {
-                             System.out.println("Maaf, tempat duduk sudah terisi.");
+                            System.out.println("Maaf, tempat duduk sudah terisi. Silakan pilih kursi lain.");
+                            kursiTidakAda = false;
                         }
                     } else {
-                        System.out.println("Maaf, baris/kolom tidak valid.");
+                        System.out.println("Maaf, baris/kolom tidak valid. Silakan masukkan baris dan kolom kembali.");
                     }
-                    break;
+                } while (!kursiTidakAda);
+
+                break;
+
 
                 
 
