@@ -43,19 +43,19 @@ public class BioskopWithScanner29{
 
                 break;
 
-
-                
-
                 case 2:
                     System.out.println("Daftar Penonton:");
                     for (int i = 0; i < 4; i++) {
                         for (int j = 0; j < 2; j++) {
-                            if (penonton[i][j] != null) {
-                                System.out.println("Baris " + (i + 1) + ", Kolom " + (j + 1) + ": " + penonton[i][j]);
+                            String temp = penonton[i][j];
+                            if (temp == null) {
+                                temp = "***";
                             }
+                            System.out.println("Baris " + (i + 1) + ", Kolom " + (j + 1) + ": " + temp);
                         }
                     }
                     break;
+
 
                 case 3:
                     System.out.println("Terima kasih. Program selesai.");
