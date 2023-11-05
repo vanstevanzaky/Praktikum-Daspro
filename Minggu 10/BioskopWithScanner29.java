@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class BioskopWithScanner29{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int baris, kolom;
-        String nama, next;
+        String next;
         String[][] penonton = new String[4][2];
 
         while (true) {
@@ -19,20 +18,26 @@ public class BioskopWithScanner29{
             switch (choice) {
                 case 1:
                     System.out.print("Masukkan nama: ");
-                    nama = sc.nextLine();
+                    String nama = sc.nextLine();
                     System.out.print("Masukkan baris: ");
-                    baris = sc.nextInt();
+                    int baris = sc.nextInt();
                     System.out.print("Masukkan kolom: ");
-                    kolom = sc.nextInt();
+                    int kolom = sc.nextInt();
                     sc.nextLine();
 
                     if (baris >= 1 && baris <= 4 && kolom >= 1 && kolom <= 2) {
-                        penonton[baris - 1][kolom - 1] = nama;
-                        System.out.println("Reservasi tempat duduk berhasil.");
+                        if (penonton[baris - 1][kolom - 1] == null) {
+                            penonton[baris - 1][kolom - 1] = nama;
+                             System.out.println("Reservasi tempat duduk berhasil.");
+                        } else {
+                             System.out.println("Maaf, tempat duduk sudah terisi.");
+                        }
                     } else {
-                        System.out.println("Maaf, baris atau kolom yang dimasukkan tidak valid.");
+                        System.out.println("Maaf, baris/kolom tidak valid.");
                     }
                     break;
+
+                
 
                 case 2:
                     System.out.println("Daftar Penonton:");
