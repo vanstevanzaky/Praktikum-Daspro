@@ -7,16 +7,23 @@ public class UcapanTerimaKasih_29{
         String namaOrang = sc.nextLine();
         sc.close();
         return namaOrang;
-
     }
 
-    public static void UcapanTerimaKasih(){
+    public static String UcapanTerimaKasih(){
         String nama = PenerimaUcapan();
-        System.out.println("Thank you "+nama+" for being the best teacher in the world.\n"+"You isnpired in me a love for learning and made me feel like I could ask you anything.");
-        
+      
+        return "Thank you "+nama+" for being the best teacher in the world.\n"+
+        "You isnpired in me a love for learning and made me feel like I could ask you anything.";
     }
+    public static void UcapanTambahan(String ucapan){
+        String tambahan = UcapanTerimaKasih();
+
+        System.out.println(tambahan +"\n"+ucapan);
+    }
+    
     public static void main(String[] args) {
-        UcapanTerimaKasih();
+        String ucapan = "I love forever";
+        UcapanTambahan(ucapan);
     }
 
 }
