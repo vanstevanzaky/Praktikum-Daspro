@@ -1,4 +1,4 @@
-public class Rekursif29 {
+public class Percobaan1_29 {
 
     static int faktorialRekursif(int n) {
         if (n == 0) {
